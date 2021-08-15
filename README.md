@@ -45,7 +45,7 @@ The filenames of the frames should be as follows: 0000.png, 0001.png, ....
 ## Evaluate
 * Cross-dataset generalisation (Table 2 in paper):
     1. Download the [pretrained model](https://drive.google.com/file/d/1wfZnxZpyNd5ouJs0LjVls7zU0N_W73L7/view?usp=sharing)
-    (directory `CrossDataset`) and place into `models/weights`. This model has been trained on FaceForensics++
+    and place into `models/weights`. This model has been trained on FaceForensics++
     (Deepfakes, FaceSwap, Face2Face, and NeuralTextures) and is the one used to get the LipForensics video-level AUC 
     results in Table 2 of the paper, reproduced below:
         
