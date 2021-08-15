@@ -23,7 +23,8 @@ The filenames of the frames should be numbered as follows: 0000.png, 0001.png, .
 4. Place face frames and corresponding landmarks into the appropriate directories:
     * For FaceForensics++, FaceShifter, and DeeperForensics, frames should be 
     placed in `data/datasets/Forensics/{dataset_name}/{compression}/images`, where `dataset_name` is RealFF (real frames from FF++),
-    Deepfakes, FaceSwap, Face2Face, NeuralTextures, FaceShifter, or DeeperForensics. `dataset_name` is c0 (no compression, c23 (low compression), or c40 (high compression).
+    Deepfakes, FaceSwap, Face2Face, NeuralTextures, FaceShifter, or DeeperForensics. `dataset_name` is c0, c23, or c40, corresponding 
+    to no compression, low compression, and high compression, respectively.
     * For CelebDF-v2, frames should
     be placed in `data/datasets/CelebDF/{dataset_name}/images` where `dataset_name` is RealCelebDF, which should 
     include all real videos from the test set, or FakeCelebDF, which should include all fake videos from the test set. 
