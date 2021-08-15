@@ -176,9 +176,7 @@ def main():
 
     for dataset in datasets:
         compression = (
-            args.compression
-            if dataset not in ("CelebDF/RealCelebDF", "CelebDF/FakeCelebDF", "DFDC", "Forensics/DeeperForensics")
-            else ""
+            args.compression if dataset not in ("CelebDF/RealCelebDF", "CelebDF/FakeCelebDF", "DFDC") else ""
         )
         root = os.path.join(args.data_root, dataset, compression)
         videos_root = os.path.join(root, "images")
