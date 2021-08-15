@@ -1,4 +1,5 @@
-"""Implementation of multi-scale temporal convolutional network. Adapted from https://github.com/mpc001/Lipreading_using_Temporal_Convolutional_Networks/blob/master/lipreading/models/tcn.py"""
+"""Implementation of multi-scale temporal convolutional network. Adapted from https://github.com/mpc001/
+Lipreading_using_Temporal_Convolutional_Networks/blob/master/lipreading/models/tcn.py"""
 
 import torch
 import torch.nn as nn

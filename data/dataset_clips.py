@@ -1,4 +1,4 @@
-"""Classes for face forgery datasets (FaceForensics++, Celeb-DF-v2, DFDC)"""
+"""Classes for face forgery datasets (FaceForensics++, FaceShifter, DeeperForensics, Celeb-DF-v2, DFDC)"""
 
 import bisect
 import os
@@ -10,7 +10,8 @@ from torch.utils.data import Dataset
 
 
 class ForensicsClips(Dataset):
-    """Dataset class for FaceForensics++. Supports returning only a subset of forgery methods in dataset"""
+    """Dataset class for FaceForensics++, FaceShifter, and DeeperForensics. Supports returning only a subset of forgery
+    methods in dataset"""
     def __init__(
             self,
             real_videos,
