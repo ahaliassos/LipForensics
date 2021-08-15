@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.idea/
+*.pyc
+*.pth
+**/images/**
+**/cropped_mouths/**
+**/landmarks/**
