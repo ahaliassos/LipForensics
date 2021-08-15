@@ -5,9 +5,11 @@ This is a PyTorch implementation of the [LipForensics paper](https://arxiv.org/a
 
 ## Setup
 ### Install packages
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
-Note: we used Python version 3.7.9 to test this code.
+Note: we used Python version 3.8 to test this code.
 ### Prepare data
 1. Follow the links below to download the datasets (you will be asked to fill out some forms before downloading):
     * [FaceForensics++ (FF++) / FaceShifter (c23)](https://github.com/ondyari/FaceForensics) 
@@ -31,12 +33,12 @@ The filenames of the frames should be numbered as follows: 0000.png, 0001.png, .
     
     The corresponding computed landmarks for each frame
     should be placed in `.npy` format in the directories defined by replacing `images` with `landmarks` above 
-    (e.g. `data/datasets/Forensics/RealFF/c23/landmarks`).
+    (e.g. for video "000", the `.npy` files for each frame should be placed in `data/datasets/Forensics/RealFF/c23/landmarks/000`).
 5. To crop the mouth region from each frame for all datasets, run
+    ```bash
+   python preprocessing/crop_mouths.py --dataset all
     ```
-    python preprocessing/crop_mouths.py --dataset all
-    ```
-    This will write the mouth images to the corresponding `cropped_mouths` directory. 
+    This will write the mouth images into the corresponding `cropped_mouths` directory. 
     
 ## Evaluate
 * Cross-dataset generalisation (Table 2 in paper):
@@ -50,12 +52,12 @@ The filenames of the frames should be numbered as follows: 0000.png, 0001.png, .
         82.4% | 73.5% | 97.1% | 97.6%
         
     2. To evaluate on e.g. FaceShifter, run
-        ```
+        ```bash
         python evaluate.py --dataset FaceShifter --weights_forgery ./models/weights/lipforensics_ff.pth
         ```
 
 ## Citation
-```
+```bibtex
 @inproceedings{haliassos2021lips,
   title={Lips Don't Lie: A Generalisable and Robust Approach To Face Forgery Detection},
   author={Haliassos, Alexandros and Vougioukas, Konstantinos and Petridis, Stavros and Pantic, Maja},
