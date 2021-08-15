@@ -17,19 +17,20 @@ Note: we used Python version 3.8 to test this code.
     * [CelebDF-v2](https://github.com/yuezunli/celeb-deepfakeforensics)
     * [DFDC](https://ai.facebook.com/datasets/dfdc/) (the test set of the full version, not the Preview)
 2. Extract the frames (e.g. using code in the [FaceForensics++ repo](https://github.com/ondyari/FaceForensics/blob/master/dataset/extract_compressed_videos.py).)
-The filenames of the frames should be numbered as follows: 0000.png, 0001.png, ....
+The filenames of the frames should be as follows: 0000.png, 0001.png, ....
 3. Detect the faces and compute 68 face landmarks. For example, you can use [RetinaFace](https://github.com/biubug6/Pytorch_Retinaface) and [FAN](https://github.com/1adrianb/face-alignment) for good results. 
 
 4. Place face frames and corresponding landmarks into the appropriate directories:
-    * For FaceForensics++, FaceShifter, and DeeperForensics, frames should be 
-    placed in `data/datasets/Forensics/{dataset_name}/{compression}/images`, where `dataset_name` is RealFF (real frames from FF++),
+    * For FaceForensics++, FaceShifter, and DeeperForensics, frames for a given video should be 
+    placed in `data/datasets/Forensics/{dataset_name}/{compression}/images/{video}`, where `dataset_name` is RealFF (real frames from FF++),
     Deepfakes, FaceSwap, Face2Face, NeuralTextures, FaceShifter, or DeeperForensics. `dataset_name` is c0, c23, or c40, corresponding 
-    to no compression, low compression, and high compression, respectively.
-    * For CelebDF-v2, frames should
-    be placed in `data/datasets/CelebDF/{dataset_name}/images` where `dataset_name` is RealCelebDF, which should 
+    to no compression, low compression, and high compression, respectively. `video` is the video name and should be numbered as follows:
+    000, 001, .... For example, the frame 0102 of real video 067 at c23 compression is found in `data/datasets/Forensics/RealFF/c23/images/067/0102.png`
+    * For CelebDF-v2, frames for a given video should
+    be placed in `data/datasets/CelebDF/{dataset_name}/images/{video}` where `dataset_name` is RealCelebDF, which should 
     include all real videos from the test set, or FakeCelebDF, which should include all fake videos from the test set. 
-    * For DFDC,
-    frames should be placed in `data/datasets/DFDC/images` (both real and fake). The video names from the test set we used in
+    * For DFDC, frames for a given video should be placed in `data/datasets/DFDC/images` (both real and fake). 
+    The video names from the test set we used in
     our experiments are given in `data/datasets/DFDC/dfdc_all_vids.txt`. 
     
     The corresponding computed landmarks for each frame
