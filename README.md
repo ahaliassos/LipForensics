@@ -58,6 +58,7 @@ The filenames of the frames should be numbered as follows: 0000.png, 0001.png, .
         ```
 
 ## Citation
+If you find this repo useful for your research, please consider citing the following:
 ```bibtex
 @inproceedings{haliassos2021lips,
   title={Lips Don't Lie: A Generalisable and Robust Approach To Face Forgery Detection},
