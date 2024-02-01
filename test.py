@@ -27,13 +27,13 @@ def load_video_frames(video_path):
 
         # Append the frame to the list
         frames.append(frame_rgb)
-
+        
     # Release the video capture object
     cap.release()
 
     # Convert the list of frames to a NumPy array
     frames_array = np.stack(frames)
-
+    frames_array = torch.from_numpy(frames_array).unsqueeze(-1)
     return frames_array
 
 # Example usage:
